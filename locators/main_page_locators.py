@@ -17,5 +17,7 @@ class ScooterMainPage:
     CAN_CANCELL_ORDER_DROP_DOWN_TEXT = [By.XPATH, "//p[contains(text(), 'Штрафа не будет')]"]
     LEAVE_ZA_MKADOM_BUTTON = [By.ID, 'accordion__heading-7']
     LEAVE_ZA_MKADOM_DROP_DOWN_TEXT = [By.XPATH, "//p[contains(text(), 'Всем самокатов!')]"]
+    ORDER_BUTTON_ON_MAIN_PAGE = [By.CLASS_NAME, 'Button_Button__ra12g Button_Middle__1CSJM']
+    QUESTION_ABOUT_IMPORTANT_HEADER = [By.XPATH, "//div[text() = 'Вопросы о важном']"]
 
 
