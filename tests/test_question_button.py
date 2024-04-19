@@ -1,6 +1,5 @@
 import allure
 from main_page import YandexScooterMainPage
-from base_page import YandexScooterBase
 
 
 class TestYandexScooterQuestionAbout:
@@ -8,8 +7,7 @@ class TestYandexScooterQuestionAbout:
     @allure.title('Проверка открытия текста под кнопкой "Сколько это стоит?"')
     def test_how_much_button_active(self, driver):
         main_page = YandexScooterMainPage(driver)
-        bp = YandexScooterBase(driver)
-        bp.click_cookie_button()
+        main_page.click_cookie_button()
         main_page.scroll_script()
         main_page.click_how_much_button()
         assert main_page.check_how_much_text() == "Сутки — 400 рублей. Оплата курьеру — наличными или картой."
@@ -17,8 +15,7 @@ class TestYandexScooterQuestionAbout:
     @allure.title('Проверка открытия текста под кнопкой "Хочу несколько самокатов"')
     def test_few_scooter_button_active(self, driver):
         main_page = YandexScooterMainPage(driver)
-        bp = YandexScooterBase(driver)
-        bp.click_cookie_button()
+        main_page.click_cookie_button()
         main_page.scroll_script()
         main_page.click_few_scooter_button()
         assert main_page.check_few_scooter_text() == ("Пока что у нас так: один заказ — один самокат. Если хотите "
@@ -28,8 +25,7 @@ class TestYandexScooterQuestionAbout:
     @allure.title('Проверка открытия текста под кнопкой "Расчёт время аренды"')
     def test_how_arenda_time_button_active(self, driver):
         main_page = YandexScooterMainPage(driver)
-        bp = YandexScooterBase(driver)
-        bp.click_cookie_button()
+        main_page.click_cookie_button()
         main_page.scroll_script()
         main_page.click_how_arenda_time_button()
         assert main_page.check_how_arenda_time_text() == (
@@ -41,8 +37,7 @@ class TestYandexScooterQuestionAbout:
     @allure.title('Проверка открытия текста под кнопкой "Заказ самоката сегодня"')
     def test_can_order_scooter_button_active(self, driver):
         main_page = YandexScooterMainPage(driver)
-        bp = YandexScooterBase(driver)
-        bp.click_cookie_button()
+        main_page.click_cookie_button()
         main_page.scroll_script()
         main_page.click_can_order_scooter_button()
         assert main_page.check_can_order_scooter_text() == ("Только начиная с завтрашнего дня. Но скоро станем "
@@ -51,8 +46,7 @@ class TestYandexScooterQuestionAbout:
     @allure.title('Проверка открытия текста под кнопкой "Вернуть самокат раньше"')
     def test_can_return_scooter_button_active(self, driver):
         main_page = YandexScooterMainPage(driver)
-        bp = YandexScooterBase(driver)
-        bp.click_cookie_button()
+        main_page.click_cookie_button()
         main_page.scroll_script()
         main_page.click_can_return_scooter_button()
         assert main_page.check_can_return_scooter_text() == ("Пока что нет! Но если что-то срочное — всегда можно "
@@ -61,8 +55,7 @@ class TestYandexScooterQuestionAbout:
     @allure.title('Проверка открытия текста под кнопкой "Зарядка с самокатом"')
     def test_charger_with_scooter_button_active(self, driver):
         main_page = YandexScooterMainPage(driver)
-        bp = YandexScooterBase(driver)
-        bp.click_cookie_button()
+        main_page.click_cookie_button()
         main_page.scroll_script()
         main_page.click_charger_with_scooter_button()
         assert main_page.check_charger_with_scooter_text() == (
@@ -73,8 +66,7 @@ class TestYandexScooterQuestionAbout:
     @allure.title('Проверка открытия текста под кнопкой "Отмена заказа"')
     def test_can_cancel_order_button_active(self, driver):
         main_page = YandexScooterMainPage(driver)
-        bp = YandexScooterBase(driver)
-        bp.click_cookie_button()
+        main_page.click_cookie_button()
         main_page.scroll_script()
         main_page.click_can_cancel_order_button()
         assert main_page.check_can_cancel_order_text() == ("Да, пока самокат не привезли. Штрафа не будет, "
@@ -83,8 +75,7 @@ class TestYandexScooterQuestionAbout:
     @allure.title('Проверка открытия текста под кнопкой "Жизнь за МКАДом"')
     def test_leave_za_mkadom_button_active(self, driver):
         main_page = YandexScooterMainPage(driver)
-        bp = YandexScooterBase(driver)
-        bp.click_cookie_button()
+        main_page.click_cookie_button()
         main_page.wait_until_questions_download()
         main_page.scroll_script()
         main_page.click_leave_za_mkadom_button()

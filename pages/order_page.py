@@ -1,10 +1,9 @@
 from order_page_locators import ScooterOrderPage
 import allure
+from base_page import BasePage
 
-class YandexScooterOrder:
 
-    def __init__(self,driver):
-        self.driver = driver
+class YandexScooterOrder(BasePage):
 
     @allure.step('Ввод имени в поле "Имя"')
     def set_name(self, name):
@@ -37,6 +36,7 @@ class YandexScooterOrder:
     @allure.step('Клик в поле "Дата"')
     def click_date_field(self):
         self.driver.find_element(*ScooterOrderPage.ORDER_WHEN_SCOOTER_COME_FIELD).click()
+
     @allure.step('Выбор даты')
     def set_date_twenty_five(self):
         self.driver.find_element(*ScooterOrderPage.ORDER_WHEN_SCOOTER_COME_DATE_1).click()

@@ -4,7 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from base_page_locators import ScooterBasePage
 
 
-class YandexScooterBase:
+class BasePage:
 
     def __init__(self, driver):
         self.driver = driver

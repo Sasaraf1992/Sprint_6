@@ -2,16 +2,16 @@ from main_page_locators import ScooterMainPage
 import allure
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+from base_page import BasePage
 
-class YandexScooterMainPage:
 
-    def __init__(self, driver):
-        self.driver = driver
+class YandexScooterMainPage(BasePage):
 
     @allure.step('Прокручиваем страницу до "Вопросы о важном"')
     def scroll_script(self):
         element = self.driver.find_element(*ScooterMainPage.QUESTION_ABOUT_IMPORTANT_HEADER)
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
+
     @allure.step('Клик на кнопку "Сколько это стоит?"')
     def click_how_much_button(self):
         self.driver.find_element(*ScooterMainPage.HOW_MUCH_COST_BUTTON).click()
@@ -76,5 +76,7 @@ class YandexScooterMainPage:
     @allure.step('Проверка наличия текста под кнопкой "Жизнь за МКАДом"')
     def check_leave_za_mkadom_text(self):
         return self.driver.find_element(*ScooterMainPage.LEAVE_ZA_MKADOM_DROP_DOWN_TEXT).text
+
     def wait_until_questions_download(self):
-        WebDriverWait(self.driver, 15).until(EC.visibility_of_element_located(ScooterMainPage.QUESTION_ABOUT_IMPORTANT_HEADER))
+        WebDriverWait(self.driver, 15).until(
+            EC.visibility_of_element_located(ScooterMainPage.QUESTION_ABOUT_IMPORTANT_HEADER))
